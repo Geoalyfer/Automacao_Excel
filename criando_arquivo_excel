@@ -1,0 +1,25 @@
+Configurando Python + Excel
+
+from openpyxl import Workbook
+
+#criando um Arquivo excel
+wb = Workbook()
+
+#Verificando as abas
+print(wb.sheetnames)
+
+#selecionado uma aba 
+sheet = wb["Sheet"]
+
+#inserindo dados pelo rótulo da célula
+sheet ["A1"].value = "Python A"
+sheet ["B1"].value = "Formação"
+
+#inserindo dados pela coordenada da célula
+sheet.cell(row=2, column=1).value = "Empower"
+sheet.cell(2,2).value = "Data"
+
+#apagando o dado de uma célula
+sheet["A1"].value = None
+
+wb.save("Comandos básicos.xlsx")
