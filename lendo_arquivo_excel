@@ -1,0 +1,23 @@
+from openpyxl import load_workbook
+
+wb = load_workbook("Lendo Excel.xlsx")
+
+#verificando as abas
+print(wb.sheetnames)
+
+#acessando as abas
+
+sheet_nomes = wb["Nomes"]
+sheet_semanas = wb["Dias da semana"]
+sheet_doces = wb["Doces"]
+
+#acessando os dados das células
+print(sheet_nomes["A2"].value)
+print(sheet_semanas.cell(8,1).value)
+
+#atualizando o valor de uma célula
+
+sheet_doces["A6"].value = "Bomba Doce de Leite"
+
+#salvando arquivo
+wb.save("Lendo Excel.xlsx")
